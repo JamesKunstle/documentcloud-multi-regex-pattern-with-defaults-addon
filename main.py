@@ -14,8 +14,16 @@ class Regex(AddOn):
             self.set_message("Please select at least one document")
             return
 
+        pattern_list = self.data["regex"]
+
+        # include patterns from csv
+        with open("patterns.csv", "r+") as pattern_file:
+            csvreader = csv.reader(pattern_file)
+            for row in csvreader:
+                pattern_list.append(row)
+
         # assumes that the regex pattern list is at least of length 1
-        if(len(self.data["regex"]) < 1):
+        if(len(pattern_list) < 1):
             self.set_message("Please provide at least one regular expression.")
             return
         
@@ -25,7 +33,7 @@ class Regex(AddOn):
             writer.writerow(["pattern", "match", "url"])
 
             # for each pattern supplied
-            for regex_pattern in self.data["regex"]:
+            for regex_pattern in pattern_list:
                 print("Pattern: " + regex_pattern)
                 pattern = re.compile(regex_pattern)
 
