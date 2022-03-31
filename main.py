@@ -14,25 +14,28 @@ class Regex(AddOn):
             self.set_message("Please select at least one document")
             return
 
+        # patterns that are passed as parameters
+        # to this add-on when we run it.
         pattern_list = self.data["regex"]
 
-        # include patterns from csv
+        # patterns that are available in the neighbor CSV file.
         with open("patterns.csv", "r+") as pattern_file:
             csvreader = csv.reader(pattern_file)
             for row in csvreader:
                 pattern_list.append(row[0])
 
-        # assumes that the regex pattern list is at least of length 1
+        # ensure that there is at fewest 1 pattern to search for.
         if(len(pattern_list) < 1):
             self.set_message("Please provide at least one regular expression.")
             return
         
+        # list matches in an output CSV file record.
         with open("matches.csv", "w+") as file_:
 
             writer = csv.writer(file_)
             writer.writerow(["pattern", "match", "url"])
 
-            # for each pattern supplied
+            # find all examples of each supplied pattern.
             for regex_pattern in pattern_list:
                 print("Pattern: " + regex_pattern)
                 pattern = re.compile(regex_pattern)
@@ -43,6 +46,8 @@ class Regex(AddOn):
                         for m in pattern.findall(document.full_text)
                     )
                     
+
+            # TODO: Remove after done debugging.        
             print("CSV Document Contents:")
             # go to the beginning of the file
             file_.seek(0)
