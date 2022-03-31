@@ -20,7 +20,6 @@ class Regex(AddOn):
         with open("patterns.csv", "r+") as pattern_file:
             csvreader = csv.reader(pattern_file)
             for row in csvreader:
-                print(row[0])
                 pattern_list.append(row[0])
 
         # assumes that the regex pattern list is at least of length 1
