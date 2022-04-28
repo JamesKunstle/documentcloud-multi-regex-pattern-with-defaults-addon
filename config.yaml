@@ -7,7 +7,10 @@ documents:
   - selected
 properties:
   regex:
-    title: Regex
-    type: string
-    format: regex
+    type: array
+    default: [""]
+    items:
+      title: Regex
+      type: string
+      format: regex
 required: [regex]
