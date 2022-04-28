@@ -5,7 +5,7 @@ This DocumentCloud Add-On allows you to search through multiple files for any of
 
 Included are a couple of patterns for typical Personally Identifiable Information such as Credit Card Number, SSN, and Telephone Number.
 
-###Included patterns in order:
+### Included patterns in order:
 ref: https://digitalfortress.tech/tips/top-15-commonly-used-regex/
 
 Credit card numbers
