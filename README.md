@@ -8,11 +8,11 @@ Included are a couple of patterns for typical Personally Identifiable Informatio
 ### Included patterns in order:
 ref: https://digitalfortress.tech/tips/top-15-commonly-used-regex/
 
-Credit card numbers
-Common phone number formats
-Social Security Number
-Common email format
-Uncommon email format
-IPv4 IP address
-IPv6 IP address
-Passport Number
+- Credit card numbers
+- Common phone number formats
+- Social Security Number
+- Common email format
+- Uncommon email format
+- IPv4 IP address
+- IPv6 IP address
+- Passport Number
