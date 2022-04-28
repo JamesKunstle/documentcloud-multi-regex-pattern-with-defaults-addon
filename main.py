@@ -37,7 +37,6 @@ class Regex(AddOn):
 
             # find all examples of each supplied pattern.
             for regex_pattern in pattern_list:
-                print("Pattern: " + regex_pattern)
                 pattern = re.compile(regex_pattern)
 
                 for document in self.client.documents.list(id__in=self.documents):
@@ -46,13 +45,6 @@ class Regex(AddOn):
                         for m in pattern.findall(document.full_text)
                     )
                     
-
-            # TODO: Remove after done debugging.        
-            print("CSV Document Contents:")
-            # go to the beginning of the file
-            file_.seek(0)
-            # print the file contents
-            print(file_.read())
 
             self.upload_file(file_)
 
