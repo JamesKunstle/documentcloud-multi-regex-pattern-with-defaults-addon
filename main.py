@@ -25,10 +25,10 @@ class Regex(AddOn):
                 pattern_list.append(row[0])
 
         # ensure that there is at fewest 1 pattern to search for.
-        if(len(pattern_list) < 1):
+        if len(pattern_list) < 1:
             self.set_message("Please provide at least one regular expression.")
             return
-        
+
         # list matches in an output CSV file record.
         with open("matches.csv", "w+") as file_:
 
@@ -44,7 +44,6 @@ class Regex(AddOn):
                         [regex_pattern, m, document.canonical_url]
                         for m in pattern.findall(document.full_text)
                     )
-                    
 
             self.upload_file(file_)
 
