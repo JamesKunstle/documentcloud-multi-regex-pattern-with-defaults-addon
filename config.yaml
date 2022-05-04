@@ -1,7 +1,8 @@
-title: Regex Extractor
+title: Multiple Regex Extractor with Defaults
 description: >-
-  This will return a JSON file of all strings the given regex matches in
-  the selected files
+  This will return a CSV file of all strings the given regex matches in
+  the selected files for all of the patterns passed as parameters, including
+  those that are run by default in the 'patterns.csv' file.
 type: object
 documents:
   - selected
